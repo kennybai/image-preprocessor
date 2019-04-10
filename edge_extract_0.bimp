@@ -1,0 +1,26 @@
+#BIMP 1.18
+#MANIPULATION SET DEFINITION
+
+[USERDEF0]
+procedure=plug-in-laplace
+num_params=3
+PARAM0=1
+PARAM1=NOT_USED
+PARAM2=NOT_USED
+
+[USERDEF1]
+procedure=gimp-drawable-invert
+num_params=2
+PARAM0=NOT_USED
+PARAM1=0
+
+[USERDEF2]
+procedure=gimp-drawable-desaturate
+num_params=2
+PARAM0=NOT_USED
+PARAM1=0
+
+[USERDEF3]
+procedure=gimp-drawable-levels-stretch
+num_params=1
+PARAM0=NOT_USED
