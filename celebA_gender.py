@@ -4,7 +4,7 @@ import shutil
 
 
 
-path = 'D:/dataset/CelebA_128/'
+path = 'c:/dataset/CelebA_128/'
 
 files = glob.glob(path + '*.jpg')
 

@@ -2,25 +2,28 @@ import os
 import glob
 import shutil
 
-num = 1000
+# num = 1000
+c = 20 #20 male, 15 eyeglasses, 31 smiling
 
-path = 'D:/dataset/CelebA_128/'
+path = 'C:\dataset\img_align_celeba'
 
 files = glob.glob(path + '*.jpg')
 
 with open('list_attr_celeba.txt', 'r') as f:
     labels = f.readlines()
 
-for i in labels[10002:10002+num]:
+classes = labels[1].split()
+
+for i in labels[2:]:
     label = i.split()
 
-    if label[21] == '1':
-        dst_path = 'testA'
+    if label[c+1] == '1':
+        dst_path = classes[c]
     else:
-        dst_path = 'testB'
+        dst_path = 'Not_' + classes[c]
 
     if not os.path.exists(dst_path):
         os.makedirs(dst_path)
 
-    shutil.copy(path + label[0], dst_path)
+    shutil.copy(os.path.join(path,label[0]), dst_path)
 
