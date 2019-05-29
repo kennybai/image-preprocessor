@@ -7,7 +7,7 @@ c = 20 #20 male, 15 eyeglasses, 31 smiling
 
 path = 'C:\dataset\img_align_celeba'
 
-files = glob.glob(path + '*.jpg')
+files = glob.glob(path + '/*.jpg')
 
 with open('list_attr_celeba.txt', 'r') as f:
     labels = f.readlines()
