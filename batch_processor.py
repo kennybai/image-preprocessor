@@ -32,10 +32,9 @@ root = '/full'
 
 counter = 0
 for dirpath, dirnames, filenames in os.walk(root):
-
+    new_dirpath = dirpath[:1] + '_' + dirpath[1:]
+    os.makedirs(new_dirpath, exist_ok=False)
     for filename in filenames:
-        new_dirpath = dirpath[:1] + '_' + dirpath[1:]
-        os.makedirs(new_dirpath, exist_ok=False)
 
         if os.path.splitext(filename)[-1] != '.png':
             continue
