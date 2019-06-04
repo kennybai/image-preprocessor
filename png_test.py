@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plot
 import os
 import time
+
 # img = cv2.imread('test2.png', -1)
 # # img = cv2.cvtColor(img,cv2.COLOR_BGRA2BGR)
 # cv2.imwrite('./out2.png', img)
@@ -95,30 +96,30 @@ if None:
 # ------------------------------------------------
 st = time.time()
 
-
-
 img = cv2.imread('test2.png', -1)
 cv2.imwrite('cv.png', img, [cv2.IMWRITE_PNG_COMPRESSION, 8])
 
-
 ct = time.time() - st
-print('%.3fs'%ct)
+print('%.3fs' % ct)
 
 st = time.time()
-
 
 img = Image.open('test2.png')
 img.save('pillow.png', compress_level=8)
 
 ct = time.time() - st
-print('%.3fs'%ct)
-
+print('%.3fs' % ct)
 
 st = time.time()
-
 
 img = plot.imread('test2.png')
 plot.imsave('matplotlib.png', img)
 
 ct = time.time() - st
-print('%.3fs'%ct)
+print('%.3fs' % ct)
+
+img = Image.open('test2.png')
+if img.mode !='RGB':
+    img = img.convert('RGB')
+img = img.resize((512, 512), PIL.Image.BICUBIC)
+img.save('pillow.png', compress_level=9)
