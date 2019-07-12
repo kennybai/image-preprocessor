@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 
-img1 = cv2.imread('test1.png')
-img2 = cv2.imread('test111.png')
+img1 = cv2.imread('ABC3.png')
+img2 = cv2.imread('ABC2.png')
 
 gray1 = cv2.cvtColor(img1, cv2.COLOR_BGRA2GRAY)
 gray2 = cv2.cvtColor(img2, cv2.COLOR_BGRA2GRAY)
@@ -38,7 +38,7 @@ matches = flann.knnMatch(des1, des2, k=2)
 # goodMatch = np.expand_dims(goodMatch, 1)
 # print(goodMatch[:20])
 
-img_out = cv2.drawMatchesKnn(img1, kp1, img2, kp2, matches[:20], None, flags=2)
+img_out = cv2.drawMatchesKnn(img1, kp1, img2, kp2, matches[:10], None, flags=2)
 
-cv2.imshow('', img_out)
-cv2.waitKey()
+cv2.imwrite('SIFT2.jpg', img_out)
+# cv2.waitKey()

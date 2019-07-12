@@ -6,7 +6,7 @@ import numpy as np
 import os
 import matplotlib.pyplot as plot
 
-root = '/comocr'
+root = 'C:\Tohou'
 
 counter = 0
 for dirpath, dirnames, filenames in os.walk(root):
@@ -14,13 +14,14 @@ for dirpath, dirnames, filenames in os.walk(root):
     # new_dirpath = dirpath.replace('full_512', 'full_512_rename')
     # os.makedirs(new_dirpath, exist_ok=False)
     for filename in filenames:
+        print(filename)
 
-        if os.path.splitext(filename)[-1] != '.jpg':
-            continue
+        # if os.path.splitext(filename)[-1] != '.png':
+        #     continue
 
-        if counter % 100 == 0:
-            print(counter)
+        # if counter % 100 == 0:
+        #     print(counter)
 
-        os.rename(os.path.join(dirpath, filename), os.path.join('/comocr_re', (str(counter).zfill(4) + '.jpg')))
+        # os.rename(os.path.join(dirpath, filename), os.path.join('/full_512_rename', (str(counter).zfill(5) + '.png')))
 
-        counter += 1
+        # counter += 1

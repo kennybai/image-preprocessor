@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import glob
 import shutil
 
-root = "/dataset/kana/train"
+root = "/dataset/iks_slim_en_o/train"
 
 counter = 0
 for dirpath, dirnames, filenames in os.walk(root):
